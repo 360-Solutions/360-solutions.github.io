@@ -32,13 +32,20 @@
             background: var(--card-bg); border: 1px solid #222; border-radius: 18px;
             overflow: hidden; text-decoration: none; color: inherit;
             transition: transform 0.2s ease;
+            display: flex; flex-direction: column;
         }
         
         .project-card:active { transform: scale(0.98); border-color: var(--accent-blue); }
 
+        /* The Fix: 'contain' ensures the whole image shows, '240px' height gives them room */
         .thumb {
-            width: 100%; height: 210px; background-size: cover; background-position: center;
-            border-bottom: 1px solid #222; background-repeat: no-repeat;
+            width: 100%; height: 240px; 
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #000; /* Black bars on the sides if image is too thin */
+            border-bottom: 1px solid #222;
+            margin-top: 10px;
         }
 
         .card-content { padding: 18px; }
@@ -47,7 +54,7 @@
 
         footer { margin-top: 60px; text-align: center; font-size: 11px; color: var(--text-dim); padding-bottom: 50px; }
         .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: 800; display: block; margin-top: 15px; font-size: 14px; }
-        .coffee-btn { margin-top: 25px; display: inline-block; padding: 12px 20px; border: 1px solid var(--accent-blue); border-radius: 30px; color: var(--accent-blue); text-decoration: none; font-weight: bold; font-size: 11px; letter-spacing: 1px; }
+        .coffee-btn { margin-top: 25px; display: inline-block; padding: 12px 20px; border: 1px solid var(--accent-blue); border-radius: 30px; color: var(--accent-blue); text-decoration: none; font-weight: bold; font-size: 11px; }
     </style>
 </head>
 <body>
@@ -68,7 +75,7 @@
             <div class="thumb" style="background-image: url('images/jlooper_thumb.jpg');"></div>
             <div class="card-content">
                 <span class="card-title">J-LOOPER v1.00</span>
-                <p class="card-desc">Two-track boutique looper pedal emulator with Zero-Gap handover logic.</p>
+                <p class="card-desc">Boutique two-track looper pedal emulator with Zero-Gap handover logic.</p>
             </div>
         </a>
 
