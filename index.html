@@ -1,1 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>360 Solutions Hub</title>
+    <style>
+        :root {
+            --bg-black: #0a0a0a;
+            --card-bg: #141414;
+            --accent-blue: #00aaff;
+            --text-main: #fcfcfc;
+            --text-dim: #999999;
+        }
 
+        body {
+            background-color: var(--bg-black);
+            color: var(--text-main);
+            font-family: -apple-system, sans-serif;
+            margin: 0; padding: 20px;
+            display: flex; flex-direction: column; align-items: center;
+        }
+
+        header { text-align: center; max-width: 500px; margin-bottom: 40px; padding-top: 30px; }
+        h1 { margin: 0; font-size: 26px; letter-spacing: 4px; font-weight: 900; color: #fff; }
+        .subtitle { font-size: 11px; color: var(--accent-blue); font-weight: 900; margin-top: 8px; letter-spacing: 2px; }
+        .bio { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-top: 25px; text-align: left; border-left: 2px solid var(--accent-blue); padding-left: 15px; }
+
+        .portfolio-grid { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 30px; }
+
+        .project-card {
+            background: var(--card-bg); border: 1px solid #222; border-radius: 18px;
+            overflow: hidden; text-decoration: none; color: inherit;
+            transition: transform 0.2s ease;
+        }
+        
+        .project-card:active { transform: scale(0.98); border-color: var(--accent-blue); }
+
+        .thumb {
+            width: 100%; height: 210px; background-size: cover; background-position: center;
+            border-bottom: 1px solid #222; background-repeat: no-repeat;
+        }
+
+        .card-content { padding: 18px; }
+        .card-title { font-size: 16px; font-weight: 900; margin-bottom: 8px; display: block; letter-spacing: 1px; color: var(--accent-blue); }
+        .card-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; margin: 0; }
+
+        footer { margin-top: 60px; text-align: center; font-size: 11px; color: var(--text-dim); padding-bottom: 50px; }
+        .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: 800; display: block; margin-top: 15px; font-size: 14px; }
+        .coffee-btn { margin-top: 25px; display: inline-block; padding: 12px 20px; border: 1px solid var(--accent-blue); border-radius: 30px; color: var(--accent-blue); text-decoration: none; font-weight: bold; font-size: 11px; letter-spacing: 1px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>360 SOLUTIONS</h1>
+        <div class="subtitle">AI-AUGMENTED INTERFACE DESIGN</div>
+        <p class="bio">
+            Prototyping music and utility tools using AI-augmented workflows on iOS. 
+            Bridging complex rhythmic logic with hardware-inspired minimalism. 
+            Designed for performance.
+        </p>
+    </header>
+
+    <div class="portfolio-grid">
+        
+        <a href="https://360-solutions.github.io/J-looper/" class="project-card">
+            <div class="thumb" style="background-image: url('images/jlooper_thumb.jpg');"></div>
+            <div class="card-content">
+                <span class="card-title">J-LOOPER v1.00</span>
+                <p class="card-desc">Two-track boutique looper pedal emulator with Zero-Gap handover logic.</p>
+            </div>
+        </a>
+
+        <a href="https://360-solutions.github.io/dum-sampler/" class="project-card">
+            <div class="thumb" style="background-image: url('images/dum_sampler_thumb.jpg');"></div>
+            <div class="card-content">
+                <span class="card-title">DUM-SAMPLER</span>
+                <p class="card-desc">Advanced sequence sampler with custom wave-file triggering and live mic-looping.</p>
+            </div>
+        </a>
+
+        <a href="https://360-solutions.github.io/Dum-machine/" class="project-card">
+            <div class="thumb" style="background-image: url('images/dum_machine_thumb.jpg');"></div>
+            <div class="card-content">
+                <span class="card-title">DUM-MACHINE</span>
+                <p class="card-desc">16-step drum sequencer exploring JavaScript audio synthesis on mobile web.</p>
+            </div>
+        </a>
+
+    </div>
+
+    <footer>
+        <a href="https://www.buymeacoffee.com/jeremiahkeller" class="coffee-btn" target="_blank">☕ SUPPORT ON BUY ME A COFFEE</a>
+        <a href="mailto:jk.360.workspace@gmail.com" class="contact-link">jk.360.workspace@gmail.com</a>
+        <p style="margin-top:25px; opacity:0.4;">Optimized for iPhone 11 Pro Max | iOS 26.3</p>
+    </footer>
+
+</body>
+</html>
