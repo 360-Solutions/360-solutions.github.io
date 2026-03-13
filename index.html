@@ -6,67 +6,92 @@
     <title>360 Solutions Hub</title>
     <style>
         :root {
-            --bg-black: #0a0a0a;
-            --card-bg: #141414;
-            --accent-blue: #00aaff;
-            --text-main: #fcfcfc;
-            --text-dim: #999999;
+            /* GitHub Inspired Color Palette */
+            --bg-main: #ffffff;
+            --bg-secondary: #f6f8fa;
+            --border-color: #d0d7de;
+            --accent-blue: #0969da;
+            --accent-purple: #8250df;
+            --text-main: #1f2328;
+            --text-dim: #656d76;
+            --card-shadow: 0 1px 3px rgba(31,35,40,0.12);
         }
 
         body {
-            background-color: var(--bg-black);
+            background-color: var(--bg-main);
             color: var(--text-main);
-            font-family: -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
             margin: 0; padding: 20px;
             display: flex; flex-direction: column; align-items: center;
+            line-height: 1.5;
         }
 
-        header { text-align: center; max-width: 500px; margin-bottom: 40px; padding-top: 30px; }
-        h1 { margin: 0; font-size: 26px; letter-spacing: 4px; font-weight: 900; color: #fff; }
-        .subtitle { font-size: 11px; color: var(--accent-blue); font-weight: 900; margin-top: 8px; letter-spacing: 2px; }
-        .bio { font-size: 13px; color: var(--text-dim); line-height: 1.6; margin-top: 25px; text-align: left; border-left: 2px solid var(--accent-blue); padding-left: 15px; }
+        header { text-align: center; max-width: 600px; margin-bottom: 40px; padding-top: 30px; }
+        h1 { margin: 0; font-size: 28px; font-weight: 600; color: var(--text-main); }
+        .subtitle { font-size: 12px; color: var(--accent-blue); font-weight: 600; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .bio { 
+            font-size: 14px; color: var(--text-main); margin-top: 25px; text-align: left; 
+            background: var(--bg-secondary); border: 1px solid var(--border-color);
+            border-radius: 6px; padding: 16px;
+        }
 
-        .portfolio-grid { width: 100%; max-width: 400px; display: flex; flex-direction: column; gap: 30px; }
+        .update-disclaimer {
+            font-size: 11px; color: var(--accent-purple); font-style: italic; margin-top: 15px;
+            display: block; font-weight: 500;
+        }
+
+        .portfolio-grid { width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 24px; }
 
         .project-card {
-            background: var(--card-bg); border: 1px solid #222; border-radius: 18px;
+            background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 8px;
             overflow: hidden; text-decoration: none; color: inherit;
-            transition: transform 0.2s ease;
-            display: flex; flex-direction: column;
+            box-shadow: var(--card-shadow); transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         
-        .project-card:active { transform: scale(0.98); border-color: var(--accent-blue); }
+        .project-card:hover { border-color: var(--accent-blue); box-shadow: 0 3px 6px rgba(140,149,159,0.15); }
 
-        /* The Fix: 'contain' ensures the whole image shows, '240px' height gives them room */
         .thumb {
-            width: 100%; height: 240px; 
+            width: 100%; height: 200px; 
             background-size: contain; 
             background-position: center;
             background-repeat: no-repeat;
-            background-color: #000; /* Black bars on the sides if image is too thin */
-            border-bottom: 1px solid #222;
-            margin-top: 10px;
+            background-color: #f0f0f0; 
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .card-content { padding: 18px; }
-        .card-title { font-size: 16px; font-weight: 900; margin-bottom: 8px; display: block; letter-spacing: 1px; color: var(--accent-blue); }
-        .card-desc { font-size: 12px; color: var(--text-dim); line-height: 1.5; margin: 0; }
+        .card-content { padding: 16px; }
+        .card-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: block; color: var(--accent-blue); }
+        .card-tag { font-size: 10px; font-weight: 600; background: #dafbe1; color: #1a7f37; padding: 2px 8px; border-radius: 12px; margin-bottom: 8px; display: inline-block; }
+        .card-desc { font-size: 13px; color: var(--text-dim); margin: 0; }
 
-        footer { margin-top: 60px; text-align: center; font-size: 11px; color: var(--text-dim); padding-bottom: 50px; }
-        .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: 800; display: block; margin-top: 15px; font-size: 14px; }
-        .coffee-btn { margin-top: 25px; display: inline-block; padding: 12px 20px; border: 1px solid var(--accent-blue); border-radius: 30px; color: var(--accent-blue); text-decoration: none; font-weight: bold; font-size: 11px; }
+        .payment-zone { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .btn { 
+            padding: 8px 16px; border: 1px solid var(--border-color); border-radius: 6px; 
+            font-size: 12px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+            background: var(--bg-secondary); color: var(--text-main);
+        }
+        .btn:hover { background: #ebf0f4; border-color: #afb8c1; }
+        .btn-primary { background: var(--accent-blue); color: #fff; border-color: rgba(27,31,36,0.15); }
+        .btn-primary:hover { background: #0860ca; }
+
+        footer { margin-top: 60px; text-align: center; font-size: 12px; color: var(--text-dim); padding-bottom: 50px; width: 100%; border-top: 1px solid var(--border-color); padding-top: 20px; }
+        .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>360 SOLUTIONS</h1>
-        <div class="subtitle">AI-AUGMENTED INTERFACE DESIGN</div>
-        <p class="bio">
-            Prototyping music and utility tools using AI-augmented workflows on iOS. 
-            Bridging complex rhythmic logic with hardware-inspired minimalism. 
-            Designed for performance.
-        </p>
+        <h1>360 Solutions</h1>
+        <div class="subtitle">Rapid Mobile Audio Prototyping</div>
+        <div class="bio">
+            Exploring the limits of mobile browsers as professional music workstations. 
+            Focused on hardware-accurate latency, stealth-optimized workflows, and 
+            performance-grade rhythmic logic.
+            <span class="update-disclaimer">
+                Note: I am an active developer. These tools evolve daily; interface colors and button layouts may drift from screenshots as I push new features and optimizations.
+            </span>
+        </div>
     </header>
 
     <div class="portfolio-grid">
@@ -74,8 +99,9 @@
         <a href="https://360-solutions.github.io/J-looper/" class="project-card">
             <div class="thumb" style="background-image: url('images/jlooper_thumb.jpg');"></div>
             <div class="card-content">
-                <span class="card-title">J-LOOPER v1.00</span>
-                <p class="card-desc">Boutique two-track looper pedal emulator with Zero-Gap handover logic.</p>
+                <div class="card-tag">Flagship</div>
+                <span class="card-title">J-LOOPER</span>
+                <p class="card-desc">Current primary project. A boutique looper pedal emulator featuring secret-recording tail logic and zero-gap baton-passing to eliminate loop glitches.</p>
             </div>
         </a>
 
@@ -83,7 +109,7 @@
             <div class="thumb" style="background-image: url('images/dum_sampler_thumb.jpg');"></div>
             <div class="card-content">
                 <span class="card-title">DUM-SAMPLER</span>
-                <p class="card-desc">Advanced sequence sampler with custom wave-file triggering and live mic-looping.</p>
+                <p class="card-desc">Second iteration in the music series. An advanced sequence sampler designed for custom wave-file triggering and live mic-looping experiments.</p>
             </div>
         </a>
 
@@ -91,16 +117,21 @@
             <div class="thumb" style="background-image: url('images/dum_machine_thumb.jpg');"></div>
             <div class="card-content">
                 <span class="card-title">DUM-MACHINE</span>
-                <p class="card-desc">16-step drum sequencer exploring JavaScript audio synthesis on mobile web.</p>
+                <p class="card-desc">The foundation. My first musical program exploring 16-step sequencing logic and JavaScript audio synthesis on mobile web browsers.</p>
             </div>
         </a>
 
     </div>
 
+    <div class="payment-zone">
+        <a href="https://www.buymeacoffee.com/jeremiahkeller" class="btn" target="_blank">☕ Buy Me a Coffee</a>
+        <a href="#" class="btn" target="_blank">❤️ Support on Ko-fi</a>
+        <a href="mailto:jk.360.workspace@gmail.com" class="btn btn-primary">Contact Me</a>
+    </div>
+
     <footer>
-        <a href="https://www.buymeacoffee.com/jeremiahkeller" class="coffee-btn" target="_blank">☕ SUPPORT ON BUY ME A COFFEE</a>
-        <a href="mailto:jk.360.workspace@gmail.com" class="contact-link">jk.360.workspace@gmail.com</a>
-        <p style="margin-top:25px; opacity:0.4;">Optimized for iPhone 11 Pro Max | iOS 26.3</p>
+        <p>Built with AI-augmented workflows in Sacramento, CA.</p>
+        <p style="opacity:0.6;">Target Hardware: iPhone 11 Pro Max / Android EBT | iOS 26.3</p>
     </footer>
 
 </body>
