@@ -73,7 +73,13 @@
         }
         .btn:hover { background: #ebf0f4; border-color: #afb8c1; }
         .btn-primary { background: var(--accent-blue); color: #fff; border-color: rgba(27,31,36,0.15); }
-        .btn-primary:hover { background: #0860ca; }
+
+        .disclaimer-box {
+            margin-top: 40px; width: 100%; max-width: 450px;
+            background: #fff8c5; border: 1px solid #d4a72c;
+            border-radius: 6px; padding: 15px; font-size: 12px; color: #735c0f;
+        }
+        .disclaimer-title { font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase; }
 
         footer { margin-top: 60px; text-align: center; font-size: 12px; color: var(--text-dim); padding-bottom: 50px; width: 100%; border-top: 1px solid var(--border-color); padding-top: 20px; }
         .contact-link { color: var(--accent-blue); text-decoration: none; font-weight: 600; }
@@ -85,11 +91,10 @@
         <h1>360 Solutions</h1>
         <div class="subtitle">Rapid Mobile Audio Prototyping</div>
         <div class="bio">
-            Exploring the limits of mobile browsers as professional music workstations. 
-            Focused on hardware-accurate latency, stealth-optimized workflows, and 
-            performance-grade rhythmic logic.
+            Returning to software development after a decade-long hiatus focusing on other career paths. 
+            I am currently utilizing AI-augmented workflows to build high-performance music tools directly on iOS. 
             <span class="update-disclaimer">
-                Note: I am an active developer. These tools evolve daily; interface colors and button layouts may drift from screenshots as I push new features and optimizations.
+                Note: I am an active developer. These tools evolve daily; interface colors and layouts may drift from screenshots as I push new features and optimizations.
             </span>
         </div>
     </header>
@@ -101,7 +106,7 @@
             <div class="card-content">
                 <div class="card-tag">Flagship</div>
                 <span class="card-title">J-LOOPER</span>
-                <p class="card-desc">Current primary project. A boutique looper pedal emulator featuring secret-recording tail logic and zero-gap baton-passing to eliminate loop glitches.</p>
+                <p class="card-desc">Boutique looper pedal emulator featuring secret-recording tail logic and zero-gap handover to eliminate loop glitches. Optimized for live performance.</p>
             </div>
         </a>
 
@@ -109,7 +114,7 @@
             <div class="thumb" style="background-image: url('images/dum_sampler_thumb.jpg');"></div>
             <div class="card-content">
                 <span class="card-title">DUM-SAMPLER</span>
-                <p class="card-desc">Second iteration in the music series. An advanced sequence sampler designed for custom wave-file triggering and live mic-looping experiments.</p>
+                <p class="card-desc">Advanced sequence sampler designed for custom wave-file triggering and experimental live mic-looping. Build #2 in the music series.</p>
             </div>
         </a>
 
@@ -123,15 +128,20 @@
 
     </div>
 
+    <div class="disclaimer-box">
+        <span class="disclaimer-title">Compatibility & Bug Reports</span>
+        As of March 11, 2026, these apps are primarily tested on <b>iOS 26.3 (iPhone 11 Pro Max)</b> and <b>Android 13 (BLU View 5)</b>. While functional, performance may vary on other hardware. 
+        I would be happy to receive bug reports or feedback from anyone testing on different devices, laptops, or tablets.
+    </div>
+
     <div class="payment-zone">
-        <a href="https://www.buymeacoffee.com/jeremiahkeller" class="btn" target="_blank">☕ Buy Me a Coffee</a>
+        <a href="https://www.buymeacoffee.com/jeremiahkeller" class="btn" target="_blank">☕ Support on Buy Me a Coffee</a>
         <a href="#" class="btn" target="_blank">❤️ Support on Ko-fi</a>
-        <a href="mailto:jk.360.workspace@gmail.com" class="btn btn-primary">Contact Me</a>
+        <a href="mailto:jk.360.workspace@gmail.com" class="btn btn-primary">jk.360.workspace@gmail.com</a>
     </div>
 
     <footer>
         <p>Built with AI-augmented workflows in Sacramento, CA.</p>
-        <p style="opacity:0.6;">Target Hardware: iPhone 11 Pro Max / Android EBT | iOS 26.3</p>
     </footer>
 
 </body>
