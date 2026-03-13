@@ -3,263 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Jeremiah Keller | Web Audio Developer</title>
+    <title>360 Solutions Hub</title>
     <style>
         :root {
-            --bg-color: #ffffff;
-            --panel-color: #f6f8fa;
-            --text-color: #1f2328;
-            --text-muted: #57606a;
+            /* GitHub Inspired Color Palette - Restored */
+            --bg-main: #ffffff;
+            --bg-secondary: #f6f8fa;
             --border-color: #d0d7de;
-            --gh-purple: #8250df;
-            --new-badge: #da3633;
+            --accent-blue: #0969da;
+            --accent-purple: #8250df;
+            --text-main: #1f2328;
+            --text-dim: #656d76;
+            --card-shadow: 0 1px 3px rgba(31,35,40,0.12);
         }
 
         body {
+            background-color: var(--bg-main);
+            color: var(--text-main);
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 20px;
+            display: flex; flex-direction: column; align-items: center;
+            line-height: 1.5;
         }
 
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
+        header { text-align: center; max-width: 600px; margin-bottom: 40px; padding-top: 30px; }
+        h1 { margin: 0; font-size: 28px; font-weight: 600; color: var(--text-main); }
+        .subtitle { font-size: 12px; color: var(--accent-blue); font-weight: 600; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
+        
+        .bio { 
+            font-size: 14px; color: var(--text-main); margin-top: 25px; text-align: left; 
+            background: var(--bg-secondary); border: 1px solid var(--border-color);
+            border-radius: 6px; padding: 16px;
         }
 
-        header {
-            margin-bottom: 50px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 30px;
+        .update-disclaimer {
+            font-size: 11px; color: var(--accent-purple); font-style: italic; margin-top: 15px;
+            display: block; font-weight: 500;
         }
 
-        h1 {
-            font-size: 32px;
-            font-weight: 900;
-            margin: 0 0 10px 0;
-            letter-spacing: -0.5px;
-        }
+        .portfolio-grid { width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 24px; }
 
-        .bio {
-            color: var(--text-muted);
-            font-size: 16px;
-            max-width: 600px;
-        }
-
-        h2 {
-            font-size: 24px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        /* Project Cards */
         .project-card {
-            background: var(--panel-color);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 24px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.05);
-        }
-
-        .project-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-
-        .project-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: var(--gh-purple);
-            margin: 0 0 5px 0;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .badge-new {
-            background: var(--new-badge);
-            color: white;
-            font-size: 11px;
-            font-weight: 900;
-            padding: 4px 8px;
-            border-radius: 20px;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            box-shadow: 0 2px 4px rgba(218, 54, 51, 0.3);
-            animation: pulse-badge 2s infinite;
-        }
-
-        @keyframes pulse-badge {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        .project-desc {
-            font-size: 15px;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .project-image {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-            background: #111; /* Dark background placeholder for contrast */
-            display: block;
-        }
-
-        .tech-stack {
-            display: flex;
-            gap: 8px;
-            flex-wrap: wrap;
-            margin-bottom: 20px;
-        }
-
-        .tech-pill {
-            background: var(--bg-color);
-            border: 1px solid var(--border-color);
-            font-size: 11px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 12px;
-            color: var(--text-color);
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--text-color);
-            color: #fff;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 14px;
-            transition: opacity 0.2s;
-        }
-
-        .btn:hover {
-            opacity: 0.8;
+            background: var(--bg-main); border: 1px solid var(--border-color); border-radius: 8px;
+            overflow: hidden; text-decoration: none; color: inherit;
+            box-shadow: var(--card-shadow); transition: border-color 0.2s ease, box-shadow 0.2s ease;
         }
         
-        /* Secondary button for older projects */
-        .btn-outline {
-            background: transparent;
-            color: var(--text-color);
-            border: 1px solid var(--border-color);
-        }
-        .btn-outline:hover {
-            background: var(--border-color);
-            opacity: 1;
+        .project-card:hover { border-color: var(--accent-blue); box-shadow: 0 3px 6px rgba(140,149,159,0.15); }
+
+        .thumb {
+            width: 100%; height: 200px; 
+            background-size: contain; 
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #f0f0f0; 
+            border-bottom: 1px solid var(--border-color);
         }
 
-        footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border-color);
-            text-align: center;
-            font-size: 13px;
-            color: var(--text-muted);
-        }
+        .card-content { padding: 16px; }
+        .card-title { font-size: 16px; font-weight: 600; margin-bottom: 4px; display: block; color: var(--accent-blue); }
         
-        .tip-links {
-            margin-top: 10px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+        /* The NEW! Badge Styled in GitHub Blue */
+        .card-tag-new { 
+            font-size: 11px; font-weight: 800; background: #ddf4ff; color: var(--accent-blue); 
+            padding: 3px 12px; border: 1px solid #54aeff; border-radius: 12px; 
+            margin-bottom: 8px; display: inline-block; text-transform: uppercase;
         }
-        
-        .tip-links a {
-            color: var(--gh-purple);
-            text-decoration: none;
-            font-weight: bold;
+
+        .card-desc { font-size: 13px; color: var(--text-dim); margin: 0; }
+
+        .payment-zone { margin-top: 40px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; }
+        .btn { 
+            padding: 8px 16px; border: 1px solid var(--border-color); border-radius: 6px; 
+            font-size: 12px; font-weight: 600; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+            background: var(--bg-secondary); color: var(--text-main);
         }
+        .btn:hover { background: #ebf0f4; border-color: #afb8c1; }
+        .btn-primary { background: var(--accent-blue); color: #fff; border-color: rgba(27,31,36,0.15); }
+
+        .disclaimer-box {
+            margin-top: 40px; width: 100%; max-width: 450px;
+            background: #fff8c5; border: 1px solid #d4a72c;
+            border-radius: 6px; padding: 15px; font-size: 12px; color: #735c0f;
+        }
+        .disclaimer-title { font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase; }
+
+        footer { margin-top: 60px; text-align: center; font-size: 12px; color: var(--text-dim); padding-bottom: 50px; width: 100%; border-top: 1px solid var(--border-color); padding-top: 20px; }
     </style>
 </head>
 <body>
 
-<div class="container">
     <header>
-        <h1>Jeremiah Keller</h1>
-        <p class="bio">
-            JavaScript developer and Web Audio API specialist. I build advanced, browser-based applications, utilizing creative workarounds and deep optimizations to deliver desktop-class audio performance natively on mobile devices.
-        </p>
-        <div class="tip-links">
-            <a href="#" target="_blank">☕ Buy me a coffee</a>
-            <a href="#" target="_blank">❤️ Ko-fi</a>
+        <h1>360 Solutions</h1>
+        <div class="subtitle">Rapid Mobile Audio Prototyping</div>
+        <div class="bio">
+            Returning to software development after a decade-long hiatus focusing on other career paths. 
+            I am currently utilizing AI-augmented workflows to build high-performance music tools directly on iOS. 
+            <span class="update-disclaimer">
+                Note: I am an active developer. These tools evolve daily; interface colors and layouts may drift from screenshots as I push new features and optimizations.
+            </span>
         </div>
     </header>
 
-    <h2>Selected Projects</h2>
-
-    <div class="project-card">
-        <div class="project-header">
-            <div>
-                <h3 class="project-title">
-                    J-looper
-                    <span class="badge-new">NEW!</span>
-                </h3>
-                <p style="margin:0; font-size:13px; color:var(--text-muted); font-weight:600;">Browser-Based Audio Workstation & Sequencer</p>
+    <div class="portfolio-grid">
+        
+        <a href="https://360-solutions.github.io/J-looper/" class="project-card">
+            <div class="thumb" style="background-image: url('image.png');"></div>
+            <div class="card-content">
+                <div class="card-tag-new">NEW!</div>
+                <span class="card-title" style="color: var(--accent-purple);">J-LOOPER</span>
+                <p class="card-desc">Advanced browser-based workstation and looper. Features multi-track sequencing, real-time microphone capture, and precise latency-compensated loop handovers.</p>
             </div>
-        </div>
-        
-        <img src="image.png" alt="J-looper Web DAW Interface" class="project-image">
-        
-        <p class="project-desc">
-            A sleek, multi-track digital audio workstation built entirely in the browser. J-looper features 8 independent track lanes, real-time microphone recording, dynamic volume scaling, and a custom visual UI inspired by modern production software. Engineered with precise latency-nudging capabilities to maintain perfect mathematical sync on mobile devices.
-        </p>
-        
-        <div class="tech-stack">
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">Web Audio API</span>
-            <span class="tech-pill">MediaRecorder API</span>
-            <span class="tech-pill">CSS Grid</span>
-        </div>
-        
-        <a href="jlooper.html" class="btn" target="_blank">Launch App</a>
+        </a>
+
+        <a href="https://360-solutions.github.io/Dum-machine/" class="project-card">
+            <div class="thumb" style="background-image: url('images/dum_machine_thumb.jpg');"></div>
+            <div class="card-content">
+                <span class="card-title">DUM-MACHINE</span>
+                <p class="card-desc">The foundation. My first musical program exploring 16-step sequencing logic and JavaScript audio synthesis on mobile web browsers.</p>
+            </div>
+        </a>
+
     </div>
 
-    <div class="project-card">
-        <div class="project-header">
-            <div>
-                <h3 class="project-title" style="color: var(--text-color);">DUM-machine</h3>
-                <p style="margin:0; font-size:13px; color:var(--text-muted); font-weight:600;">Classic Drum Sequencer</p>
-            </div>
-        </div>
-        
-        <p class="project-desc">
-            My very first web audio project. The DUM-machine is a straightforward, highly reliable browser-based drum machine. It served as the foundational testing ground for learning audio scheduling, buffer management, and UI grid synchronization. Simple, effective, and it just works.
-        </p>
-        
-        <div class="tech-stack">
-            <span class="tech-pill">JavaScript</span>
-            <span class="tech-pill">HTML5 Audio</span>
-            <span class="tech-pill">DOM Manipulation</span>
-        </div>
-        
-        <a href="dummachine.html" class="btn btn-outline" target="_blank">Launch App</a>
+    <div class="disclaimer-box">
+        <span class="disclaimer-title">Compatibility & Bug Reports</span>
+        As of March 13, 2026, these apps are primarily tested on <b>iOS 26.3 (iPhone 11 Pro Max)</b> and <b>Android 13 (BLU View 5)</b>. While functional, performance may vary on other hardware. 
+        I would be happy to receive bug reports or feedback from anyone testing on different devices, laptops, or tablets.
+    </div>
+
+    <div class="payment-zone">
+        <a href="https://www.buymeacoffee.com/jeremiahkeller" class="btn" target="_blank">☕ Support on Buy Me a Coffee</a>
+        <a href="#" class="btn" target="_blank">❤️ Support on Ko-fi</a>
+        <a href="mailto:jk.360.workspace@gmail.com" class="btn btn-primary">jk.360.workspace@gmail.com</a>
     </div>
 
     <footer>
-        &copy; 2026 Jeremiah Keller. All rights reserved.
+        <p>Built with AI-augmented workflows in Sacramento, CA.</p>
     </footer>
-</div>
 
 </body>
 </html>
