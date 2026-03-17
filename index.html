@@ -44,17 +44,34 @@
             display: block; font-weight: 500;
         }
 
-        /* --- SUPPORT LINKS --- */
+        /* --- SUPPORT SECTION (Inside Bio) --- */
+        .bio-support {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color);
+            text-align: center;
+        }
+        
         .support-links {
-            display: flex; justify-content: center; gap: 20px; margin-top: 20px;
+            display: flex; justify-content: center; gap: 20px;
             font-size: 13px; font-weight: 800; text-transform: uppercase;
         }
+        
         .support-links a { 
             text-decoration: none; transition: opacity 0.2s, color 0.2s; 
             display: flex; align-items: center; gap: 6px;
             color: var(--text-main); 
         }
+        
         .support-links a:hover { opacity: 0.8; color: var(--accent-blue); }
+        
+        .support-message {
+            font-size: 12px;
+            color: var(--text-dim);
+            margin-top: 10px;
+            font-weight: 500;
+            display: block;
+        }
 
         /* --- PROJECT GRID & CARDS --- */
         .portfolio-grid { width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 24px; }
@@ -111,27 +128,31 @@
     <header>
         <h1>360 Solutions</h1>
         <div class="subtitle">Rapid Mobile Audio Prototyping</div>
+        
         <div class="bio">
             Returning to software development after a decade-long hiatus focusing on other career paths. 
             I am currently utilizing AI-augmented workflows to build high-performance music tools directly on iOS. 
             <span class="update-disclaimer">
                 Note: I am an active developer. These tools evolve daily; interface colors and layouts may drift from screenshots as I push new features and optimizations.
             </span>
-        </div>
-        
-        <div class="support-links">
-            <a href="https://ko-fi.com/360solutions" target="_blank">☕ Ko-fi</a>
-            <a href="https://www.buymeacoffee.com/360solutions" target="_blank">☕ Buy Me a Coffee</a>
+            
+            <div class="bio-support">
+                <div class="support-links">
+                    <a href="https://ko-fi.com/360solutions" target="_blank">☕ Ko-fi</a>
+                    <a href="https://www.buymeacoffee.com/360solutions" target="_blank">☕ Buy Me a Coffee</a>
+                </div>
+                <span class="support-message">It’s totally free, but any financial support is greatly appreciated.</span>
+            </div>
         </div>
     </header>
 
     <div class="portfolio-grid">
         
-        <a href="https://360-solutions.github.io/WebLooper/?v=1.0" class="project-card">
+        <a href="https://360-solutions.github.io/WebLooper/?v=0.01" class="project-card">
             <div class="thumb" style="background-image: url('images/WebLooper1.PNG');"></div>
             <div class="card-content">
                 <div class="card-tag-new">NEW!</div>
-                <span class="card-title" style="color: var(--accent-purple);">WEBLOOPER v1.0</span>
+                <span class="card-title" style="color: var(--accent-purple);">WebLooper v1.0</span>
                 <p class="card-desc">
                     A lightweight, free web-based workstation designed for quick mobile rehearsals without the need for expensive audio interfaces or wired headphones. It utilizes a unique "spotlight" trick: a visual metronome guides your rhythm, and backing tracks automatically drop out for one cycle to ensure a clean microphone capture without bleed before the virtual band rejoins you.
                 </p>
@@ -141,7 +162,7 @@
         <a href="https://360-solutions.github.io/Dum-machine/" class="project-card">
             <div class="thumb" style="background-image: url('images/dum_machine_thumb.jpg');"></div>
             <div class="card-content">
-                <span class="card-title">DUM-MACHINE</span>
+                <span class="card-title">Dum-Machine v1.0</span>
                 <p class="card-desc">The foundation. My first musical program exploring 16-step sequencing logic and JavaScript audio synthesis on mobile web browsers.</p>
             </div>
         </a>
