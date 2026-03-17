@@ -16,10 +16,6 @@
             --text-main: #1f2328;
             --text-dim: #656d76;
             --card-shadow: 0 1px 3px rgba(31,35,40,0.12);
-            
-            /* Official Brand Colors for Support Links */
-            --kofi-color: #FF5E5B;
-            --bmac-color: #FF813F; 
         }
 
         /* --- GLOBAL STYLES --- */
@@ -48,15 +44,17 @@
             display: block; font-weight: 500;
         }
 
-        /* --- SUPPORT LINKS (Sleek Text Style) --- */
+        /* --- SUPPORT LINKS --- */
         .support-links {
             display: flex; justify-content: center; gap: 20px; margin-top: 20px;
             font-size: 13px; font-weight: 800; text-transform: uppercase;
         }
-        .support-links a { text-decoration: none; transition: opacity 0.2s; display: flex; align-items: center; gap: 6px;}
-        .support-links a:hover { opacity: 0.7; }
-        .link-kofi { color: var(--kofi-color); }
-        .link-bmac { color: var(--bmac-color); }
+        .support-links a { 
+            text-decoration: none; transition: opacity 0.2s, color 0.2s; 
+            display: flex; align-items: center; gap: 6px;
+            color: var(--text-main); 
+        }
+        .support-links a:hover { opacity: 0.8; color: var(--accent-blue); }
 
         /* --- PROJECT GRID & CARDS --- */
         .portfolio-grid { width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 24px; }
@@ -122,18 +120,18 @@
         </div>
         
         <div class="support-links">
-            <a href="#" class="link-kofi" target="_blank">☕ Ko-fi</a>
-            <a href="https://www.buymeacoffee.com/jeremiahkeller" class="link-bmac" target="_blank">☕ Buy Me a Coffee</a>
+            <a href="https://ko-fi.com/360solutions" target="_blank">☕ Ko-fi</a>
+            <a href="https://www.buymeacoffee.com/360solutions" target="_blank">☕ Buy Me a Coffee</a>
         </div>
     </header>
 
     <div class="portfolio-grid">
         
-        <a href="https://360-solutions.github.io/J-looper/?v=4.04" class="project-card">
-            <div class="thumb" style="background-image: url('images/jlooper_thumb.PNG');"></div>
+        <a href="https://360-solutions.github.io/WebLooper/?v=1.0" class="project-card">
+            <div class="thumb" style="background-image: url('images/WebLooper1.PNG');"></div>
             <div class="card-content">
                 <div class="card-tag-new">NEW!</div>
-                <span class="card-title" style="color: var(--accent-purple);">J-LOOPER v4.04</span>
+                <span class="card-title" style="color: var(--accent-purple);">WEBLOOPER v1.0</span>
                 <p class="card-desc">
                     A lightweight, free web-based workstation designed for quick mobile rehearsals without the need for expensive audio interfaces or wired headphones. It utilizes a unique "spotlight" trick: a visual metronome guides your rhythm, and backing tracks automatically drop out for one cycle to ensure a clean microphone capture without bleed before the virtual band rejoins you.
                 </p>
@@ -152,7 +150,7 @@
 
     <div class="disclaimer-box">
         <span class="disclaimer-title">Compatibility & Bug Reports</span>
-        As of March 15, 2026, these apps are primarily tested on <b>iOS 26.3 (iPhone 11 Pro Max)</b> and <b>Android 13 (BLU View 5)</b>. While functional, performance may vary on other hardware. 
+        As of March 15, 2026, these apps are primarily tested on iOS 26.3 and Android 13. While functional, performance may vary on other hardware. 
         I would be happy to receive bug reports or feedback from anyone testing on different devices, laptops, or tablets.
     </div>
 
