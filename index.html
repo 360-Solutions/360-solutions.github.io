@@ -6,7 +6,6 @@
     <title>360 Solutions Hub</title>
     
     <style>
-        /* --- CSS VARIABLES --- */
         :root {
             --bg-main: #ffffff;
             --bg-secondary: #f6f8fa;
@@ -18,7 +17,6 @@
             --card-shadow: 0 1px 3px rgba(31,35,40,0.12);
         }
 
-        /* --- GLOBAL STYLES --- */
         body {
             background-color: var(--bg-main);
             color: var(--text-main);
@@ -28,7 +26,6 @@
             line-height: 1.5;
         }
 
-        /* --- HEADER & BIO --- */
         header { text-align: center; max-width: 600px; margin-bottom: 40px; padding-top: 30px; }
         h1 { margin: 0; font-size: 28px; font-weight: 600; color: var(--text-main); }
         .subtitle { font-size: 12px; color: var(--accent-blue); font-weight: 600; margin-top: 8px; text-transform: uppercase; letter-spacing: 1px; }
@@ -44,7 +41,6 @@
             display: block; font-weight: 500;
         }
 
-        /* --- SUPPORT SECTION (Inside Bio) --- */
         .bio-support {
             margin-top: 20px;
             padding-top: 15px;
@@ -73,7 +69,6 @@
             display: block;
         }
 
-        /* --- PROJECT GRID & CARDS --- */
         .portfolio-grid { width: 100%; max-width: 450px; display: flex; flex-direction: column; gap: 24px; }
 
         .project-card {
@@ -104,7 +99,6 @@
 
         .card-desc { font-size: 13px; color: var(--text-dim); margin: 0; }
 
-        /* --- FOOTER & DISCLAIMERS --- */
         .disclaimer-box {
             margin-top: 40px; width: 100%; max-width: 450px;
             background: #fff8c5; border: 1px solid #d4a72c;
@@ -127,11 +121,11 @@
 
     <header>
         <h1>360 Solutions</h1>
-        <div class="subtitle">Rapid Mobile Audio Prototyping</div>
+        <div class="subtitle">Rapid Mobile Audio & Utility Prototyping</div>
         
         <div class="bio">
             Returning to software development after a decade-long hiatus focusing on other career paths. 
-            I am currently utilizing AI-augmented workflows to build lightweight, experimental music tools directly on iOS. 
+            I am currently utilizing AI-augmented workflows to build lightweight, experimental tools directly on iOS. 
             <span class="update-disclaimer">
                 Note: I am an active developer. These tools evolve daily; interface colors and layouts may drift from screenshots as I push new features and optimizations.
             </span>
@@ -141,28 +135,38 @@
                     <a href="https://ko-fi.com/360solutions" target="_blank">☕ Ko-fi</a>
                     <a href="https://www.buymeacoffee.com/360solutions" target="_blank">☕ Buy Me a Coffee</a>
                 </div>
-                <span class="support-message">It’s totally free, but any financial support is greatly appreciated.</span>
+                <span class="support-message">It is totally free, but any financial support is greatly appreciated.</span>
             </div>
         </div>
     </header>
 
     <div class="portfolio-grid">
         
-        <a href="https://360-solutions.github.io/WebLooper/?v=0.01" class="project-card">
-            <div class="thumb" style="background-image: url('images/WebLooper1.PNG');"></div>
+        <a href="https://360-solutions.github.io/StackBot360/?v=1.0" class="project-card">
+            <div class="thumb" style="background-image: url('images/stackbot_thumb.jpg');"></div>
             <div class="card-content">
                 <div class="card-tag-new">NEW!</div>
-                <span class="card-title" style="color: var(--accent-purple);">WebLooper v1.0</span>
+                <span class="card-title" style="color: var(--accent-purple);">StackBot360 v1.0</span>
                 <p class="card-desc">
-                    A lightweight, free web-based workstation designed for quick mobile rehearsals without the need for expensive audio interfaces or wired headphones. It utilizes a unique "spotlight" trick: a visual metronome guides your rhythm, and backing tracks automatically drop out for one cycle to ensure a clean microphone capture without bleed before the virtual band rejoins you.
+                    A mobile-first, hands-free study engine. Paste massive batches of text, AI-generated lists, or lecture notes, and let the text-to-speech Bot read them back to you. Perfect for jogging, commuting, or sleep-learning. Features full data portability with a simple clipboard copy/paste sharing system.
                 </p>
             </div>
         </a>
 
-        <a href="https://360-solutions.github.io/Dum-machine/" class="project-card">
+        <a href="https://360-solutions.github.io/WebLooper360/?v=1.0" class="project-card">
+            <div class="thumb" style="background-image: url('images/WebLooper1.PNG');"></div>
+            <div class="card-content">
+                <span class="card-title">WebLooper360 v1.0</span>
+                <p class="card-desc">
+                    A lightweight web-based workstation designed for quick mobile rehearsals without audio interfaces. Utilizes a unique "spotlight cycle" to prevent audio bleed and a conference call trick to maintain high-quality microphone access on mobile browsers.
+                </p>
+            </div>
+        </a>
+
+        <a href="https://360-solutions.github.io/Dum-machine/?v=0.08" class="project-card">
             <div class="thumb" style="background-image: url('images/dum_machine_thumb.jpg');"></div>
             <div class="card-content">
-                <span class="card-title">Dum-Machine v1.0</span>
+                <span class="card-title">Dum-Machine v0.08</span>
                 <p class="card-desc">The foundation. My first musical program exploring 16-step sequencing logic and JavaScript audio synthesis on mobile web browsers.</p>
             </div>
         </a>
@@ -171,7 +175,7 @@
 
     <div class="disclaimer-box">
         <span class="disclaimer-title">Compatibility & Bug Reports</span>
-        As of March 15, 2026, these apps are primarily tested on iOS 26.3 and Android 13. While functional, performance may vary on other hardware. 
+        As of March 2026, these apps are primarily tested on iOS 26.3 and Android 13. While functional, performance may vary on other hardware. 
         I would be happy to receive bug reports or feedback from anyone testing on different devices, laptops, or tablets.
     </div>
 
